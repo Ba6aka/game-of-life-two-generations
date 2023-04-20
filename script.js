@@ -29,6 +29,8 @@ window.addEventListener('keydown', (e) => {
         if (play) {
             timerId = setInterval(() => {
                 update(firstState, secondState)
+                countOfBlack.textContent = firstState.length
+                countOfBlue.textContent = secondState.length
             }, 100);
         } else {
             clearInterval(timerId)
