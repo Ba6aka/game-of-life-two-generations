@@ -91,3 +91,15 @@ function canvasClickHandler(e, state, secondState) {
     render(state, secondState)
 }
 
+
+function wrapX(x) {
+    if (x < 0) return rowLength - 1
+    if (x > rowLength - 1) return 0
+    return x
+}
+
+function wrapY(y) {
+    if (y < 0) return rowCount - 1
+    if (y > rowCount - 1) return 0
+    return y
+}
