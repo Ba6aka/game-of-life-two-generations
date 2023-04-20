@@ -5,6 +5,7 @@ const cellSize = document.querySelector('.cell-size')
 const canvasParent = document.querySelector('main')
 const rowLength = window.innerWidth / cellSize.value | 0
 const rowCount = (window.innerHeight - 150) / cellSize.value | 0
+const foo = document.querySelector('footer')
 
 let blueState = document.querySelector('.blue')
 let blackState = document.querySelector('.black')
@@ -21,7 +22,14 @@ render(firstState, secondState)
 
 document.querySelector('canvas').onclick = e => canvasClickHandler(e, firstState, secondState)
 
-
+foo.addEventListener('click', (e) => {
+    if (e.target.value == 2 && blackState.checked) {
+        blackState.checked = !blackState.checked
+    }
+    else if (e.target.value == 1 && blueState.checked) {
+        blueState.checked = !blueState.checked
+    }
+})
 
 function render(state, secondState) {
     const cellSize = document.querySelector('.cell-size')
