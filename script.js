@@ -91,6 +91,19 @@ function canvasClickHandler(e, state, secondState) {
     render(state, secondState)
 }
 
+function cellWristing(state, secondState, cell) {
+    if (secondState.includes(cell) && state.includes(cell)) {
+        const dred = Math.floor(Math.random() * 2)
+        if (dred) {
+            state.push(cell)
+            secondState.splice(secondState.indexOf(cell), 1)
+        } else {
+            secondState.push(cell)
+            state.splice(state.indexOf(cell), 1)
+        }
+    }
+}
+
 function getNeighborsState(state) {
     let neighborsState = []
 
