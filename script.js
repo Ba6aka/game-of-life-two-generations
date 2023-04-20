@@ -22,6 +22,10 @@ render(firstState, secondState)
 
 document.querySelector('canvas').onclick = e => canvasClickHandler(e, firstState, secondState)
 
+window.addEventListener('resize', () => {
+    render(firstState, secondState)
+})
+
 cellSize.addEventListener('change', () => {
     render(firstState, secondState)
 })
