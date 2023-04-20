@@ -12,6 +12,16 @@ let countOfBlack = document.querySelector('.black-count')
 let countOfBlue = document.querySelector('.blue-count')
 let firstState = ['3,3', '2,3', '3,2', '3,1', '1,2', '38,37', '39,35', '38,36', '40,36', '40,37', '39,38']
 let secondState = ['20,20', '21,21', '22,20', '22,19', '23,22', '23,23', '27,17', '18,18', '15,17', '17,15', '15,15', '32,18']
+let lifeColor = 'black'
+let deadColor = 'white'
+
+canvasParent.append(canvas)
+
+render(firstState, secondState)
+
+document.querySelector('canvas').onclick = e => canvasClickHandler(e, firstState, secondState)
+
+
 
 function render(state, secondState) {
     const cellSize = document.querySelector('.cell-size')
@@ -51,5 +61,17 @@ function checkState() {
     } else if (blueState.checked) {
         return secondState
     }
+}
+
+function canvasClickHandler(e, state, secondState) {
+    let cell = `${e.clientX / cellSize.value | 0},${e.clientY / cellSize.value | 0}`
+
+    if (checkState().includes(cell)) {
+        checkState().splice(checkState().indexOf(cell), 1)
+    } else {
+        checkState().push(cell)
+    }
+
+    render(state, secondState)
 }
 
