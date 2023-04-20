@@ -91,7 +91,6 @@ function canvasClickHandler(e, state, secondState) {
     render(state, secondState)
 }
 
-
 function getNeighborsState(state) {
     let neighborsState = []
 
@@ -103,6 +102,26 @@ function getNeighborsState(state) {
 
     }
     return neighborsState
+}
+
+function update(state, state2) {
+    firstState = getNextState(state)
+    secondState = getNextState(state2)
+
+    render(firstState, secondState)
+}
+
+function getNextState(state) {
+    const nextState =
+        getNeighborsState(state).filter((cell) => {
+            const neighbors = getNeighbors(cell)
+
+            const { length } = neighbors.filter(neighbor => state.includes(neighbor))
+
+            return (length == 3 || length + state.includes(cell) == 3)
+        })
+
+    return nextState
 }
 
 function getNeighbors(cell) {
