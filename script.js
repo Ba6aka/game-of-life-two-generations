@@ -69,8 +69,8 @@ function getRandomCoord() {
 
 function getEgg() {
     const [x, y] = getRandomCoord()
-    console.log(checkGeneration())
-    checkGeneration().push(`${x},${y}`,
+  
+    checkState().push(`${x},${y}`,
         `${x + 1},${y - 1}`,
         `${x + 1},${y - 2}`,
         `${x},${y - 3}`,
@@ -83,7 +83,7 @@ function getEgg() {
 function getGlider() {
     const [x, y] = getRandomCoord()
 
-    checkGeneration().push(`${x},${y}`,
+    checkState().push(`${x},${y}`,
         `${x},${y + 1}`,
         `${x},${y - 1}`,
         `${x + 1},${y - 1}`,
@@ -95,7 +95,7 @@ function getGlider() {
 function getStone() {
     const [x, y] = getRandomCoord()
 
-    checkGeneration().push(`${x},${y}`,
+    checkState().push(`${x},${y}`,
         `${x + 1},${y}`,
         `${x},${y - 1}`,
         `${x + 1},${y - 1}`
