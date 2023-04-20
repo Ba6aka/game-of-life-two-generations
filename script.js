@@ -7,6 +7,8 @@ const rowLength = window.innerWidth / cellSize.value | 0
 const rowCount = (window.innerHeight - 150) / cellSize.value | 0
 const foo = document.querySelector('footer')
 
+let timerId
+let play = true
 let blueState = document.querySelector('.blue')
 let blackState = document.querySelector('.black')
 let countOfBlack = document.querySelector('.black-count')
@@ -21,6 +23,19 @@ canvasParent.append(canvas)
 render(firstState, secondState)
 
 document.querySelector('canvas').onclick = e => canvasClickHandler(e, firstState, secondState)
+
+window.addEventListener('keydown', (e) => {
+    if (e.code == 'Space') {
+        if (play) {
+            timerId = setInterval(() => {
+                update(firstState, secondState)
+            }, 100);
+        } else {
+            clearInterval(timerId)
+        }
+        play = !play
+    }
+})
 
 window.addEventListener('resize', () => {
     render(firstState, secondState)
