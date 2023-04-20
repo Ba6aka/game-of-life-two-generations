@@ -39,6 +39,20 @@ window.addEventListener('keydown', (e) => {
     }
 })
 
+function getRandomCoord() {
+    const min = 0;
+    const maxY = rowCount;
+    const maxX = rowLength
+
+    const x = Math.floor(Math.random() * (maxX - min + 1)) + min;
+    let y = Math.floor(Math.random() * (maxY - min + 1)) + min;
+
+    while (y === x) {
+        y = Math.floor(Math.random() * (maxY - min + 1)) + min;
+    }
+    return [x, y]
+}
+
 window.addEventListener('resize', () => {
     render(firstState, secondState)
 })
