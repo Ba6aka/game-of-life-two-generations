@@ -36,18 +36,20 @@ window.addEventListener('keydown', (e) => {
             clearInterval(timerId)
         }
         play = !play
-        if (e.code == 'Digit1') {
-            getEgg()
-        }
-
-        if (e.code == 'Digit2') {
-            getGlider()
-        }
-
-        if (e.code == 'Digit3') {
-            getStone()
-        }
     }
+
+    if (e.code == 'Digit1') {
+        getEgg()
+    }
+
+    if (e.code == 'Digit2') {
+        getGlider()
+    }
+
+    if (e.code == 'Digit3') {
+        getStone()
+    }
+    
 })
 
 function getRandomCoord() {
