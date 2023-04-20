@@ -36,6 +36,17 @@ window.addEventListener('keydown', (e) => {
             clearInterval(timerId)
         }
         play = !play
+        if (e.code == 'Digit') {
+            getEgg()
+        }
+
+        if (e.code == 'Digi2') {
+            getGlider()
+        }
+
+        if (e.code == 'Digit3') {
+            getStone()
+        }
     }
 })
 
