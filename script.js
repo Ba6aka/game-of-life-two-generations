@@ -22,6 +22,10 @@ render(firstState, secondState)
 
 document.querySelector('canvas').onclick = e => canvasClickHandler(e, firstState, secondState)
 
+cellSize.addEventListener('change', () => {
+    render(firstState, secondState)
+})
+
 foo.addEventListener('click', (e) => {
     if (e.target.value == 2 && blackState.checked) {
         blackState.checked = !blackState.checked
