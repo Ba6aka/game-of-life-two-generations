@@ -91,6 +91,20 @@ function canvasClickHandler(e, state, secondState) {
     render(state, secondState)
 }
 
+
+function getNeighborsState(state) {
+    let neighborsState = []
+
+    for (const neib of state) {
+        const neibs = getNeighbors(neib)
+        for (const neb of neibs) {
+            if (!neighborsState.includes(neb)) neighborsState.push(neb)
+        }
+
+    }
+    return neighborsState
+}
+
 function getNeighbors(cell) {
     const neighbors = []
     const [x, y] = cell.split(',').map(Number)
