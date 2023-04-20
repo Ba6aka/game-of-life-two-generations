@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <main></main>
+
+    <footer>
+        <div class="container">
+        <div class="generations">
+            <div class="labels"><label>
+                    <input type="checkbox" class="black" name="myCheckbox" value="1">
+                    <span class="black-generation">black generation</span>
+                    <label>
+                        <input type="checkbox" class="blue" name="myCheckbox" value="2">
+                        <span class="blue-generation"> blue generation</span>
+                    </label>
+                </label></div>
+            <div class="counts">
+                <span class="black-count">count black</span>
+                <span class="blue-count">count blue</span>
+            </div>
+        </div>
+        <div>
+            <label class="label-size"  for="rangeInput">Choice size of cells</label>
+            <input class="cell-size" type="range" id="rangeInput" name="rangeInput" min="10" max="20" step="1"
+                value="12">
+        </div>
+    </div>
+    <div class="rules">
+        <ul>
+        <li>Play/Pause - SPACE</li>
+        <li>Spawn egg in random place - 1 </li>
+        <li>Spawn glider in random place - 2</li>
+        <li>Spawn stone in random place - 3</li>
+    </ul>
+    </div>
+    </footer>
+</body>
+</html>
