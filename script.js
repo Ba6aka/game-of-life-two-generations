@@ -91,6 +91,20 @@ function canvasClickHandler(e, state, secondState) {
     render(state, secondState)
 }
 
+function getNeighbors(cell) {
+    const neighbors = []
+    const [x, y] = cell.split(',').map(Number)
+    neighbors.push(`${x},${wrapY(y - 1)}`,
+        `${wrapX(x + 1)},${wrapY(y - 1)}`,
+        `${wrapX(x + 1)},${y}`,
+        `${wrapX(x + 1)},${wrapY(y + 1)}`,
+        `${x},${y + 1}`,
+        `${wrapX(x - 1)},${wrapY(y + 1)}`,
+        `${wrapX(x - 1)},${y}`,
+        `${wrapX(x - 1)},${wrapY(y - 1)}`)
+
+    return neighbors
+}
 
 function wrapX(x) {
     if (x < 0) return rowLength - 1
