@@ -138,6 +138,8 @@ function createGrid(rowCount, rowLength, state, secondState) {
         for (let x = 0; x < rowLength; x++) {
             let cell = `${x},${y}`
 
+            cellWristing()
+
             ctx.fillStyle = deadColor
             ctx.strokeRect(x * cellSize.value, y * cellSize.value, cellSize.value + 1, cellSize.value + 1)
 
